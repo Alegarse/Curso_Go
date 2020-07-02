@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -14,7 +15,7 @@ func main() {
 
 	sites := []string{
 		"https://www.google.com",
-		"https://drive.google.com",
+		"https://drive.googe.com",
 		"https://maps.google.com",
 		"https://hangouts.google.com",
 	}
@@ -31,6 +32,7 @@ func main() {
 			res, err := http.Get(site)
 			if err != nil {
 				cancel()
+				fmt.Println("El link " + site + " es erróneo")
 			}
 
 			select {
